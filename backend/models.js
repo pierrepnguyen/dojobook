@@ -6,12 +6,17 @@ mongoose.connect(connect, {useNewUrlParser:true});
 const UserSchema = mongoose.Schema({
     username: {
         type: String, 
-        minlength: [3, ' username must be at least 3 characters'],
-        required: [true, 'userame is required']
+        minlength: [3, 'The username must be at least 3 characters'],
+        required: [true, 'A userame is required']
+    },
+    password: {
+      type: String,
+      minlength: [6, 'The password must be at least 6 characters'],
+      required: [true, 'A password is required']
     },
     name: {
       type: String,
-      required: [true, 'Name is required']
+      required: [true, 'A name is required']
     },
     post: { type: String }
 }, { timestamps: true });
