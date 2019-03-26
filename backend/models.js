@@ -13,11 +13,7 @@ const UserSchema = mongoose.Schema({
       type: String,
       required: [true, 'Name is required']
     },
-    description: {
-      type: String,
-      minlength: [3, 'Pet description must be at least 3 characters'],
-      required: [true, 'Description is required']
-    }
+    post: { type: String }
 }, { timestamps: true });
 
 module.exports = { 
