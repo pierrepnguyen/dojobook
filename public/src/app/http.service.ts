@@ -11,10 +11,10 @@ export class HttpService {
   allPost() {
     return this._http.get('/users');
   }
-  newUser(user){
-    return this._http.post('/users/newUser', user);
+
+  newUser(data){
+    return this._http.post('/users/newUser', data);
   } 
-  // getAll(){
-  //   return this._http.get('/authors');
+
   }
 

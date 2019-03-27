@@ -1,22 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-new-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class NewUserComponent implements OnInit {
+
+export class HomeComponent implements OnInit {
   errors: any;
   dupError: any;
   user = { username: "", name: "", password: "" };
 
-  constructor(private _httpService: HttpService, private _router: Router) { }
+  constructor(
+    private _httpService: HttpService,
+    private _router: Router
+    ) { }
 
   ngOnInit() {
 
   }
-// add Login Function/Registration (1st) Submit is for Registration/Function with two different errors
+
   onSubmit() {
     let observable = this._httpService.newUser(this.user);
     observable.subscribe(data => {
@@ -34,7 +39,7 @@ export class NewUserComponent implements OnInit {
       
       if (data['success']) {
         console.log('here');
-        this._router.navigate(['/users']);
+        this._router.navigate(['/home']);
       }
     });
 
