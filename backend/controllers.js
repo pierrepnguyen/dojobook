@@ -7,7 +7,8 @@ module.exports = {
       .catch(err => res.json(err))
   },
   newUser: (req, res) => {
-    User.findOne()
+    const data = req.body.username;
+    User.findOne(data)
       .then(User.create()
         .then(data => res.json(data))
         .catch(err => res.json(err)))

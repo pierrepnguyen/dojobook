@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
     password: ''
   };
   dupError: any;
+
   user = {
     username: "",
     name: "",
@@ -31,12 +32,12 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
-    let observable = this._httpService.newUser(this.user);
+    let observable = this._httpService.newUser(this.user)
     observable.subscribe(data => {
       if (data['dupError']) {
         this.dupError = data['dupError'];
       }
-      if(data['errors']){
+      else if(data['errors']){
         console.log('here')
         this.errors = data['errors'];
       }
