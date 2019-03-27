@@ -13,7 +13,7 @@ export class HttpService {
   }
 
   newUser(data){
-    return this._http.post('/users/newUser', data);
+    return this._http.post('/users/new', data);
   } 
 
   }

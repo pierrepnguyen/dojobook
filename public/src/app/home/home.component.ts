@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
       if (data['dupError']) {
         this.dupError = data['dupError'];
       }
-      else if(data['errors']){
+      if(data['errors']){
         console.log('here')
         this.errors = data['errors'];
       }
@@ -49,7 +49,11 @@ export class HomeComponent implements OnInit {
 
     this.dupError = null;
     this.errors = null;
-    this.user = { username: "", name: "", password: "" };
+    this.user = {
+      username: "",
+      name: "",
+      password: ""
+    };
 
   }
 }

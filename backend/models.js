@@ -21,7 +21,10 @@ const UserSchema = mongoose.Schema({
     post: [{ 
       type: String,
       maxlength: [255, 'Your post is too long']
-    }]
+    }],
+    messages: {
+      type: String,
+    }
 }, { timestamps: true });
 
 module.exports = { 
