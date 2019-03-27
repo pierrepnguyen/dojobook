@@ -18,7 +18,11 @@ const UserSchema = mongoose.Schema({
       type: String,
       required: [true, 'A name is required']
     },
-    post: { type: String }
+    post: { type: String },
+    messages: {
+      type: String,
+
+    }
 }, { timestamps: true });
 
 module.exports = { 
