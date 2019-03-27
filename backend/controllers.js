@@ -7,12 +7,23 @@ module.exports = {
       .catch(err => res.json(err))
   },
   newUser: (req, res) => {
-    const data = req.body.username;
-    User.findOne(data)
-      .then(User.create()
-        .then(data => res.json(data))
-        .catch(err => res.json(err)))
-      .catch(err => res.json({dupError: 'That username already exists'}))
+    User.findOne({ name: req.body.username }, (err, user) => {
+			if (err) {
+        res.json({ dupError: 'That username already exists' });
+			} else {
+        if (user) {
+          res.json({ dupError: 'That username already exists' });
+					} else {
+            User.create(req.body, err => {
+              if (err) {
+                res.json(err);
+									} else {
+                    res.json({ success: true });
+                }
+							});
+					}
+			}
+    });
   },
   findUser: (req, res) => {
     const ID = req.params.id;
