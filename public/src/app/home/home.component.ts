@@ -16,7 +16,7 @@ export class NewUserComponent implements OnInit {
   ngOnInit() {
 
   }
-
+// add Login Function/Registration (1st) Submit is for Registration/Function with two different errors
   onSubmit() {
     let observable = this._httpService.newUser(this.user);
     observable.subscribe(data => {
@@ -34,7 +34,7 @@ export class NewUserComponent implements OnInit {
       
       if (data['success']) {
         console.log('here');
-        this._router.navigate(['/landing']);
+        this._router.navigate(['/users']);
       }
     });
 
