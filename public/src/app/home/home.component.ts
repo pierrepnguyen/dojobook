@@ -9,9 +9,17 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
-  errors: any;
+  errors: any = {
+    username: '',
+    name: '',
+    password: ''
+  };
   dupError: any;
-  user = { username: "", name: "", password: "" };
+  user = {
+    username: "",
+    name: "",
+    password: ""
+  };
 
   constructor(
     private _httpService: HttpService,
@@ -25,21 +33,16 @@ export class HomeComponent implements OnInit {
   onSubmit() {
     let observable = this._httpService.newUser(this.user);
     observable.subscribe(data => {
-      console.log(data);
       if (data['dupError']) {
         this.dupError = data['dupError'];
       }
-      
-      if (data['error']) {
-        this.errors = [];
-        for (let msg in data['error'].errors) {
-          this.errors.push(data['error'].errors[msg].message)
-        }
-      } 
-      
+      if(data['errors']){
+        console.log('here')
+        this.errors = data['errors'];
+      }
       if (data['success']) {
         console.log('here');
-        this._router.navigate(['/home']);
+        this._router.navigate(['/']);
       }
     });
 

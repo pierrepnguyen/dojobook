@@ -1,31 +1,20 @@
 <div class="container">
-  <!-- <h1>Login!</h1> -->
-  <!-- <form (ngSubmit)="onSubmit()"></form> Have to change the function for login-->
-      <!-- <label for ="username">Username: </label>
-      <input type="text"> -->
-        <!-- <div *ngIf="f.username.errors.required"></div> -->
-      <!-- <label for ="password">Password: </label>
-      <input type="password"> -->
-        <!-- <div *ngIf="f.password.errors.required"></div> -->
-      <!-- <button class="">Login</button>
-      <a routerLink="/landing"></a> -->
   <h1>Register!</h1>
-  <form (submit)="onSubmit()"></form>
+  <form (submit)="onSubmit()">
     <div>
+      <p *ngIf="dupError" style="color:red">{{ dupError }}</p>
       <label for ="username">Username: </label>
-      <input type="text">
-      <!-- <div *ngIf="f.username.errors.required"></div> -->
+      <input type="text" name="user.username" [(ngModel)]="user.username">
+      <p *ngIf="errors" style="color:red">{{ errors.username.message }}</p>
     </div>
     <div>
       <label for ="name">Name: </label>
       <input type="text">
-      <!-- <div *ngIf="f.name.errors.required"></div> -->
     </div>
     <div>
       <label for ="password">Password: </label>
       <input type="password">
-        <!-- <div *ngIf="f.password.errors.required"></div> -->
     </div>
-      <button class="">Register</button>
-      <a routerLink="/landing"></a>
+      <button class="waves-effect waves-light btn">Register</button>
+  </form>
 </div>

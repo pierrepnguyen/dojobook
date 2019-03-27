@@ -11,7 +11,7 @@ module.exports = {
       .then(User.create()
         .then(data => res.json(data))
         .catch(err => res.json(err)))
-      .catch(err => res.json('That username already exists'))
+      .catch(err => res.json({dupError: 'That username already exists'}))
   },
   findUser: (req, res) => {
     const ID = req.params.id;
