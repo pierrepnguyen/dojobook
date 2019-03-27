@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
       }
       if (data['success']) {
         console.log('here');
-        this._router.navigate(['/']);
+        this._router.navigate(['/home']);
       }
     });
 

@@ -18,7 +18,10 @@ const UserSchema = mongoose.Schema({
       type: String,
       required: [true, 'A name is required']
     },
-    post: { type: String }
+    post: [{ 
+      type: String,
+      maxlength: [255, 'Your post is too long']
+    }]
 }, { timestamps: true });
 
 module.exports = { 
