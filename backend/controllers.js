@@ -1,4 +1,4 @@
-const { User } = require('./models');
+const  User  = require('./models');
 
 module.exports = {
   allPosts: (req, res) => {
@@ -8,20 +8,20 @@ module.exports = {
   },
 
   newUser: (req, res) => {
-    User.findOne({ name: req.body.username }, (err, user) => {
+    User.findOne({ username: req.body.username }, (err, user) => {
 			if (err) {
-        res.json({ dupError: 'That username already exists' });
+					res.json({ dupError: 'That name already exists' });
 			} else {
-        if (user) {
-          res.json({ dupError: 'That username already exists' });
-        } else {
-            User.create(req.body, err => {
-              if (err) {
-                res.json(err);
-                } else {
-                  res.json({ success: true });
-                }
-            });
+					if (user) {
+							res.json({ dupError: 'That name already exists' });
+					} else {
+							Pet.create(req.body, err => {
+									if (err) {
+											res.json(err);
+									} else {
+											res.json({ success: true });
+									}
+							});
 					}
 			}
     });
