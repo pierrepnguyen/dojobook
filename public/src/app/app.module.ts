@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
+import { MessagingComponent } from './messaging/messaging.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    IndexComponent
+    IndexComponent,
+    MessagingComponent
   ],
   imports: [
     BrowserModule,
