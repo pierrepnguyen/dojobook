@@ -1,6 +1,13 @@
 const  { User }  = require('./models');
 
 module.exports = {
+  getUserByUsername: (req, res) => {
+    console.log(req.body)
+    User.find({username: req.body.username, password: req.body.password})
+      .then(data => res.json(data))
+      .catch(err => res.json(err));
+  },
+
   allPosts: (req, res) => {
     User.find()
       .then(data => res.json(data))
@@ -10,10 +17,10 @@ module.exports = {
   newUser: (req, res) => {
     User.findOne({ username: req.body.username }, (err, user) => {
 			if (err) {
-					res.json({ dupError: 'That name already exists' });
+					res.json({ dupError: 'That username already exists' });
 			} else {
 					if (user) {
-							res.json({ dupError: 'That name already exists' });
+							res.json({ dupError: 'That username already exists' });
 					} else {
 							User.create(req.body, err => {
 									if (err) {
