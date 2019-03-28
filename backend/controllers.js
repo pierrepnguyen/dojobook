@@ -6,7 +6,7 @@ module.exports = {
       .then(data => res.json(data))
       .catch(err => res.json(err))
   },
-  // ONLY DO THIS FOR NEW USER. CHANGES WILL BREAK CODE
+
   newUser: (req, res) => {
     User.findOne({ name: req.body.username }, (err, user) => {
 			if (err) {
@@ -26,6 +26,7 @@ module.exports = {
 			}
     });
   },
+
   findUser: (req, res) => {
     const ID = req.params.id;
     User.findById({_id: ID})
@@ -33,4 +34,11 @@ module.exports = {
       .catch(err => res.json(err))
   },
 
+  createPost: (req, res) => {
+    const ID = req.params.id;
+    const DATA = req.body;
+    User.updateOne({_id: ID}, {$push: {posts: DATA}}, {runValidators: true, new: true})
+      .then(data => res.json(data))
+      .catch(err => res.json(err));
+  },
 }

@@ -1,6 +1,23 @@
 <div class="row grey darken-1">
+  <!-- <a class="waves-effect waves-light btn" [routerLink]="['/messaging']">Messaging!</a> -->
   <div class="col s12">
-    <p>Hello!</p>
+    <div class="row">
+      <form (submit)="addPost(newPost)">
+        <div>
+          <!-- insert error messaging here!  -->
+          <!-- add ngFor statement -->
+        </div>
+        <div class="input-field">
+          <label for="post">Add post</label>
+          <textarea type="text" placeholder="What would you like to post USER.NAME?" name="newPost" [(ngModel)]="newPost"></textarea>
+        </div>
+        <a class="waves-effect waves-light btn">Post!</a>
+      </form>
+    </div>
+    <div class="row">
+      <!-- add a ngFor loop of all posts of all users -->
+      <p id="posts">Test Post!</p>
+    </div>
   </div>
 </div>
 
