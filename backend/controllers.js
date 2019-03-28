@@ -1,4 +1,4 @@
-const { User } = require('./models');
+const  User  = require('./models');
 
 module.exports = {
   getUserByUsername: (req, res) => {
@@ -15,20 +15,20 @@ module.exports = {
   },
 
   newUser: (req, res) => {
-    User.findOne({ name: req.body.username }, (err, user) => {
+    User.findOne({ username: req.body.username }, (err, user) => {
 			if (err) {
-        res.json({ dupError: 'That username already exists' });
+					res.json({ dupError: 'That name already exists' });
 			} else {
-        if (user) {
-          res.json({ dupError: 'That username already exists' });
-        } else {
-            User.create(req.body, err => {
-              if (err) {
-                res.json(err);
-                } else {
-                  res.json({ success: true });
-                }
-            });
+					if (user) {
+							res.json({ dupError: 'That name already exists' });
+					} else {
+							Pet.create(req.body, err => {
+									if (err) {
+											res.json(err);
+									} else {
+											res.json({ success: true });
+									}
+							});
 					}
 			}
     });
@@ -41,11 +41,11 @@ module.exports = {
       .catch(err => res.json(err))
   },
 
-  createPost: (req, res) => {
-    const ID = req.params.id;
-    const DATA = req.body;
-    User.updateOne({_id: ID}, {$push: {posts: DATA}}, {runValidators: true, new: true})
-      .then(data => res.json(data))
-      .catch(err => res.json(err));
-  },
+  // createPost: (req, res) => {
+  //   const ID = req.params.id;
+  //   const DATA = req.body;
+  //   User.updateOne({_id: ID}, {$push: {posts: DATA}}, {runValidators: true, new: true})
+  //     .then(data => res.json(data))
+  //     .catch(err => res.json(err));
+  // },
 }
