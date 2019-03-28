@@ -14,14 +14,14 @@ module.exports = {
 			} else {
         if (user) {
           res.json({ dupError: 'That username already exists' });
-					} else {
+        } else {
             User.create(req.body, err => {
               if (err) {
                 res.json(err);
-									} else {
-                    res.json({ success: true });
+                } else {
+                  res.json({ success: true });
                 }
-							});
+            });
 					}
 			}
     });
