@@ -20,5 +20,10 @@ export class HttpService {
   createPost(id: String, data: any) {
     return this._http.put('/api/posts/:id', data);
   }
+
+  getUserByUsername(data: any){
+    console.log("Service ", data)
+    return this._http.post('/users/login', data);
+  }
 }
 
