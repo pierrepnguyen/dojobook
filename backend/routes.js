@@ -5,5 +5,5 @@ module.exports = app => {
     .get('/users', controllers.allPosts)
     .get('/users/:id', controllers.findUser)
     .post('/users/new', controllers.newUser)
-    .put('/api/posts/:id', controllers.createPost)
+    // .put('/api/posts/:id', controllers.createPost)
 }

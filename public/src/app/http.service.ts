@@ -17,8 +17,8 @@ export class HttpService {
   } 
 
   // access id through session for currently logged in user
-  createPost(id: String, data: any) {
-    return this._http.put('/api/posts/:id', data);
-  }
+  // createPost(id: String, data: any) {
+  //   return this._http.put('/api/posts/:id', data);
+  // }
 }
 
