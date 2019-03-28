@@ -18,19 +18,19 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
   }
 
-  addPost(post) {
-    // make sure id is correct syntax
-    this._httpService.createPost(this.id, post)
-      .subscribe(data => {
-        console.log("Added a post!", data);
-        this.newPost = data; 
-        if (data['errors']) {
-          this.errors = data['errors'];
-          this._router.navigate(['/home']);
-        }
-        else {
-          this._router.navigate(['/home']);
-        }
-      })
-  }
+  // addPost(post) {
+  //   // make sure id is correct syntax
+  //   this._httpService.createPost(this.id, post)
+  //     .subscribe(data => {
+  //       console.log("Added a post!", data);
+  //       this.newPost = data; 
+  //       if (data['errors']) {
+  //         this.errors = data['errors'];
+  //         this._router.navigate(['/home']);
+  //       }
+  //       else {
+  //         this._router.navigate(['/home']);
+  //       }
+  //     })
+  // }
 }
