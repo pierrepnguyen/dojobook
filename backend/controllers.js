@@ -1,4 +1,4 @@
-const  User  = require('./models');
+const  { User }  = require('./models');
 
 module.exports = {
   allPosts: (req, res) => {
@@ -15,7 +15,7 @@ module.exports = {
 					if (user) {
 							res.json({ dupError: 'That name already exists' });
 					} else {
-							Pet.create(req.body, err => {
+							User.create(req.body, err => {
 									if (err) {
 											res.json(err);
 									} else {
