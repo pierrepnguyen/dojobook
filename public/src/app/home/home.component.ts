@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
         this.errors = data['errors'];
       }
       if (data['success']) {
-        console.log('here');
+        console.log(data);
         this._router.navigate(['/home']);
       }
     });

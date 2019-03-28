@@ -6,6 +6,7 @@ module.exports = {
       .then(data => res.json(data))
       .catch(err => res.json(err))
   },
+  // ONLY DO THIS FOR NEW USER. CHANGES WILL BREAK CODE
   newUser: (req, res) => {
     User.findOne({ name: req.body.username }, (err, user) => {
 			if (err) {
@@ -13,14 +14,14 @@ module.exports = {
 			} else {
         if (user) {
           res.json({ dupError: 'That username already exists' });
-					} else {
+        } else {
             User.create(req.body, err => {
               if (err) {
                 res.json(err);
-									} else {
-                    res.json({ success: true });
+                } else {
+                  res.json({ success: true });
                 }
-							});
+            });
 					}
 			}
     });
