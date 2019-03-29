@@ -18,8 +18,9 @@
       <p *ngIf="errors" style="color:red">{{ errors.password.message }}</p>
       <input type="password" name="user.password" [(ngModel)]='user.password'>
     </div>
+    <br>
       <button class="waves-effect waves-light btn blue">Register</button>
     </form>
-    <br>
-    <button class="waves-effect waves-light btn blue" [routerLink]="['/login']">Log In</button>
+    <p>Already have an account? <a [routerLink]="['/login']">Log in here!</a></p>
+    <!-- <button class="waves-effect waves-light btn blue" [routerLink]="['/login']">Log In</button> -->
 </div>
