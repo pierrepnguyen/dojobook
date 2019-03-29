@@ -39,25 +39,5 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['/login']);
         }
       })
-
-    // let observable = this._httpService.newUser(this.user)
-    // observable.subscribe(data => {
-    //   if(data['errors']){
-    //     console.log('in the LogIn Function')
-    //     this.errors = data['errors'];
-    //   }
-
-    //   if (data['success']) {
-    //     console.log(data);
-    //     this._router.navigate(['/login']);
-    //   }
-    // });
-
-    // this.errors = null;
-    // this.user = {
-    //   username: "",
-    //   password: ""
-    // };
-
   }
 }
