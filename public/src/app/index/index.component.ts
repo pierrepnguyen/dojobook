@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from '../http.service';
+import { User } from '../../../../backend/models.js';
 
 @Component({
   selector: 'app-index',
@@ -12,6 +13,7 @@ export class IndexComponent implements OnInit {
   id: String;
   newPost: any; 
   errors: any;
+  User: User;
 
   constructor(private _httpService: HttpService,  private _route: ActivatedRoute, private _router: Router) { }
 
