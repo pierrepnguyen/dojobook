@@ -1,7 +1,7 @@
 const controllers = require('./controllers');
 
 module.exports = app => {
-  app
+    app
     .get('/users', controllers.allPosts)
     .get('/users/:id', controllers.findUser)
     .post('/users/login', controllers.getUserByUsername)

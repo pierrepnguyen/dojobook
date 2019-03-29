@@ -29,8 +29,11 @@ export class LoginComponent implements OnInit {
     console.log("component ts", this.user)
     this._httpService.getUserByUsername(this.user)
       .subscribe(data => {
-        console.log(data['length']);        
-        if(data['length'] > 0){
+        console.log(data);        
+        if(data){
+          sessionStorage.setItem('user', data['username']);
+          console.log("This is ", data);
+          console.log("This is the current user name ", sessionStorage.getItem('user'));
           this._router.navigate(['/home']);
         } else {
           this._router.navigate(['/login']);

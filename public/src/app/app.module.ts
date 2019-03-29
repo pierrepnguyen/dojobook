@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { MessagingComponent } from './messaging/messaging.component';
+import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     IndexComponent,
     MessagingComponent,
+    NavComponent,
     LoginComponent
   ],
   imports: [
