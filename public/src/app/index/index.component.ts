@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from '../http.service';
+<<<<<<< HEAD
 // import { User } from '../../../../backend/models'
+=======
+import { User } from '../../../../backend/models.js';
+>>>>>>> 8350785a7ee0dc9d900fe185bc9b6dffbebd6c72
 
 @Component({
   selector: 'app-index',
@@ -15,8 +19,12 @@ export class IndexComponent implements OnInit {
     post: '',
   } 
   errors: any;
+<<<<<<< HEAD
   username: String;
   // username: User; 
+=======
+  User: User;
+>>>>>>> 8350785a7ee0dc9d900fe185bc9b6dffbebd6c72
 
   constructor(private _httpService: HttpService,  private _route: ActivatedRoute, private _router: Router) { }
 
