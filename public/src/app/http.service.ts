@@ -16,8 +16,8 @@ export class HttpService {
     return this._http.post('/users/new', data);
   } 
   
-  createPost(id: String, data: any) {
-    return this._http.put('/users/posts/:id', data);
+  createPost(username, data: any) {
+    return this._http.put(`/users/post/${username}`, data);
   }
 
   getUserByUsername(data: any){

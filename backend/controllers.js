@@ -61,11 +61,11 @@ module.exports = {
       .catch(err => res.json(err))
   },
 
-  // createPost: (req, res) => {
-  //   const ID = req.params.id;
-  //   const DATA = req.body;
-  //   User.updateOne({_id: ID}, {$push: {posts: DATA}}, {runValidators: true, new: true})
-  //     .then(data => res.json(data))
-  //     .catch(err => res.json(err));
-  // },
+  createPost: (req, res) => {
+    const UN = req.params.username;
+    const DATA = req.body;
+    User.updateOne({username: UN }, {$push: {posts: DATA}}, {runValidators: true, new: true})
+      .then(data => res.json(data))
+      .catch(err => res.json(err));
+  },
 }
